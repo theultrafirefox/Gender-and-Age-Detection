@@ -63,10 +63,9 @@ def get_age_and_gender(image):
             genderNet.setInput(blob)
             genderPreds = genderNet.forward()
             gender = genderList[genderPreds[0].argmax()]
-            print(f'Gender: {gender}')
 
             ageNet.setInput(blob)
             agePreds = ageNet.forward()
             age = ageList[agePreds[0].argmax()]
-            print(f'Age: {age[1:-1]} years')
+
             return f'Gender: {gender}\nAge: {age[1:-1]} years'
